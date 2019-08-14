@@ -79,3 +79,8 @@ urlpatterns = [
     path(''), include('music.urls'))
 ]
 ```
+
+###mac port killer
+```
+lsof -nP -i4TCP:8000
+```
