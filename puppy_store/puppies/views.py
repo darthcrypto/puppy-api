@@ -7,7 +7,7 @@ from .models import Puppy
 from .serializers import PuppySerializer
 
 @api_view(['GET', 'DELETE', 'PUT'])
-def get_delete_update(request, pk):
+def get_delete_update_puppy(request, pk):
     try:
         puppy = Puppy.objects.get(pk=pk)
     except Puppy.DoesNotExist:
@@ -31,4 +31,3 @@ def get_post_puppies(request):
     #insert a new record for a puppy
     elif request.method == 'POST':
         return Response({})
-        

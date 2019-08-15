@@ -84,3 +84,6 @@ urlpatterns = [
 ```
 lsof -nP -i4TCP:8000
 ```
+
+###access rest api
+http://localhost:8000/api/v1/puppies
