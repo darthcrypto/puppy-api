@@ -92,3 +92,10 @@ http://localhost:8000/api/v1/puppies
 ```bash
 python manage.py test
 ```
+
+###add .gitignore file in root directory of repo
+```bash
+*.pyc
+```
+Need to do this in order to not have merge conflicts:
+https://coderwall.com/p/wrxwog/why-not-to-commit-pyc-files-into-git-and-how-to-fix-if-you-already-did
