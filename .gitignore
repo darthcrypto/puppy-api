@@ -1,1 +1,3 @@
 *.pyc
+puppy_store/puppies/__pycache__
+puppy_store/puppy_store/__pycache__
