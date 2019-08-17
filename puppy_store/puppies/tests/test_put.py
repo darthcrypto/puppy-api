@@ -22,7 +22,7 @@ class UpdateSinglePuppyTest(TestCase):
             'breed': 'Labrador',
             'color': 'Black'
          }
-         self.invalid_payload = {
+        self.invalid_payload = {
              'name': '',
              'age': 4,
              'breed': 'Pamerion',
