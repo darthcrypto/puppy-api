@@ -99,3 +99,12 @@ python manage.py test
 ```
 Need to do this in order to not have merge conflicts:
 https://coderwall.com/p/wrxwog/why-not-to-commit-pyc-files-into-git-and-how-to-fix-if-you-already-did
+
+If you already have .pyc files in your git repo, pull down the master branch and remove them this way:
+```bash
+Remove .pyc files using git rm *.pyc. If this not work use git rm -f *.pyc
+Commit git commit -a -m 'all pyc files removed'
+Push git push
+In future commits you can ignore .pyc files by creating a .gitignore file
+```
+resource: https://stackoverflow.com/questions/26021040/remove-pyc-files-from-git-remote-repository
