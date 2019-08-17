@@ -6,7 +6,7 @@ from rest_framework import status
 from .models import Puppy
 from .serializers import PuppySerializer
 
-@api_view(['GET', 'UDPATE', 'DELETE'])
+@api_view(['GET', 'DELETE', 'PUT'])
 def get_delete_update_puppy(request, pk):
     try:
         puppy = Puppy.objects.get(pk=pk)
@@ -17,11 +17,17 @@ def get_delete_update_puppy(request, pk):
     if request.method == 'GET':
         serializer = PuppySerializer(puppy)
         return Response(serializer.data)
+       
+    #update details of a single puppy
+    if request.method == 'PUT':
+        serializer = PuppySerializer(puppy, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
     #delete a single puppy
     elif request.method == 'DELETE':
-        return Response({})
-    #update details of a single puppy
-    elif request.method == 'PUT':
         return Response({})
 
 @api_view(['GET', 'POST'])
@@ -44,3 +50,4 @@ def get_post_puppies(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
