@@ -34,7 +34,7 @@ class UpdateSinglePuppyTest(TestCase):
             reverse('get_delete_update_puppy', kwargs={'pk': self.muffin.pk}),
             data=json.dumps(self.valid_payload),
             content_type='application/json')
-         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
     
     def test_invalid_update_puppy(self):
         response = client.put(
