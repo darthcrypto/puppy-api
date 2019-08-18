@@ -19,7 +19,7 @@ class DeleteSinglePuppy(TestCase):
     
     def test_valid_delete_puppy(self):
         response = client.delete(
-            reverse = client.delete('get_delete_update_puppy', kwargs={'pk': self.muffin.pk}))
+            reverse('get_delete_update_puppy', kwargs={'pk': self.muffin.pk}))
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
     def test_invalid_delete_puppy(self):
